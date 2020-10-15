@@ -24,16 +24,16 @@ namespace TestApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(int n)
+        public async Task<IActionResult> Get(int n)
         {
-            //var x = FindPrimeNumber(n);
+            FindPrimeNumber(n);
 
             Console.WriteLine("Ping...");
 
             return Ok();
         }
 
-        public long FindPrimeNumber(int n)
+        public async Task<long> FindPrimeNumber(int n)
         {
             int count = 0;
             long a = 2;
