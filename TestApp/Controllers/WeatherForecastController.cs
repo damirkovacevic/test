@@ -26,9 +26,9 @@ namespace TestApp.Controllers
         [HttpGet]
         public IActionResult Get(int n)
         {
-            var x = FindPrimeNumber(n);
+            //var x = FindPrimeNumber(n);
 
-            return Ok(x);
+            return Ok(HttpContext.Connection.RemoteIpAddress?.ToString());
         }
 
         public long FindPrimeNumber(int n)
