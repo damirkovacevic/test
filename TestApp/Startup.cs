@@ -26,6 +26,8 @@ namespace TestApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            Console.WriteLine(Configuration.GetValue<string>("env-test"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +37,8 @@ namespace TestApp
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            
 
             app.UseHttpsRedirection();
 
