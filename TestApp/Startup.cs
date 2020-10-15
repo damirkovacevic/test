@@ -28,6 +28,8 @@ namespace TestApp
             services.AddControllers();
 
             Console.WriteLine(Configuration.GetValue<string>("env-test"));
+            Console.WriteLine(Configuration.GetValue<string>("config-map"));
+            Console.WriteLine(Configuration.GetValue<string>("secret-a"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
