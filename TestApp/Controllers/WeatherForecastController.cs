@@ -24,16 +24,37 @@ namespace TestApp.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IActionResult Get(int n)
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var x = FindPrimeNumber(n);
+
+            return Ok(x);
+        }
+
+        public long FindPrimeNumber(int n)
+        {
+            int count = 0;
+            long a = 2;
+            while (count < n)
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+                long b = 2;
+                int prime = 1;// to check if found a prime
+                while (b * b <= a)
+                {
+                    if (a % b == 0)
+                    {
+                        prime = 0;
+                        break;
+                    }
+                    b++;
+                }
+                if (prime > 0)
+                {
+                    count++;
+                }
+                a++;
+            }
+            return (--a);
         }
     }
 }
