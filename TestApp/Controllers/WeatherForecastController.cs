@@ -28,7 +28,9 @@ namespace TestApp.Controllers
         {
             //var x = FindPrimeNumber(n);
 
-            return Ok(HttpContext.Connection.RemoteIpAddress?.ToString());
+            Console.WriteLine("Ping...");
+
+            return Ok();
         }
 
         public long FindPrimeNumber(int n)
