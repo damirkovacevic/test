@@ -28,7 +28,7 @@ namespace TestApp.Controllers
         {
             FindPrimeNumber(n);
 
-            Console.WriteLine("Trigger me 5...");
+            Console.WriteLine("Trigger me 6...");
 
             return Ok();
         }
